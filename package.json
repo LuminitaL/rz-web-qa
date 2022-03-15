@@ -1,0 +1,21 @@
+{
+  "name": "rz-web-qa",
+  "version": "1.0.0",
+  "description": "Automation testing for RadioZum.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "automation",
+    "cypress",
+    "test",
+    "cases"
+  ],
+  "author": "Luminita Leu <luminitaleu44@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.2"
+  }
+}
