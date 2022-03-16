@@ -8,6 +8,14 @@ export class AppPage {
   }
 
   clickOnButton(locator) {
-    cy.wait(7000).get(locator).click();
+    cy.get(locator).click();
+  }
+
+  clickOnButtonByIndex(locator, index) {
+    cy.get(locator).eq(index).click();
+  }
+
+  waitUntil(seconds) {
+    cy.wait(seconds);
   }
 }
