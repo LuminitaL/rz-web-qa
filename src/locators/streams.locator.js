@@ -8,13 +8,15 @@ export const Streams = {
 
   radioStream: ".stream",
 
-  clickOnRadioZum1InstagramIcon:
-    '[href="https://instagram.com/radiozum1"] > .fab',
-  clickOnRadioZum1FacebookIcon: '[href="https://fb.com/radiozum1"] > .fab',
-  clickOnRadioZum2InstagramIcon:
-    '[href="https://instagram.com/radiozum2"] > .fab',
-  clickOnRadioZum2FacebookIcon: '[href="https://fb.com/radiozum2"] > .fab',
-  clickOnRadioZum3InstagramIcon:
-    '[href="https://instagram.com/radiozum3"] > .fab',
-  clickOnRadioZum3FacebookIcon: '[href="https://fb.com/radiozum3"] > .fab',
+  ig: {
+    rz1: '[href="https://instagram.com/radiozum1"] > .fab',
+    rz2: '[href="https://instagram.com/radiozum2"] > .fab',
+    rz3: '[href="https://instagram.com/radiozum3"] > .fab',
+  },
+
+  fb: {
+    rz1: '[href="https://fb.com/radiozum1"] > .fab',
+    rz2: '[href="https://fb.com/radiozum2"] > .fab',
+    rz3: '[href="https://fb.com/radiozum3"] > .fab',
+  },
 };

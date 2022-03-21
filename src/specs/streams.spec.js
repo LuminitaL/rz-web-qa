@@ -1,5 +1,6 @@
 import { AppPage, StreamPage } from "../page-objects";
 import { Streams } from "../locators";
+import { Chainers } from "../chainers";
 
 describe("Streams: Click play, stop, next and back button", () => {
   let appPage = null;
@@ -14,67 +15,67 @@ describe("Streams: Click play, stop, next and back button", () => {
 
   it("should start stream", () => {
     appPage.waitUntil(7000);
-    appPage.clickOnButton(Streams.play);
+    appPage.click(Streams.play);
 
-    expect(appPage.shouldBeVisible(Streams.stop));
+    expect(appPage.should(Streams.stop, Chainers.beVisible));
 
     streamPage.notEqToText(Streams.songTitle, "Radio Zum 1");
   });
 
   it("should stop stream", () => {
     appPage.waitUntil(7000);
-    appPage.clickOnButton(Streams.play);
+    appPage.click(Streams.play);
     appPage.waitUntil(7000);
-    appPage.clickOnButton(Streams.stop);
+    appPage.click(Streams.stop);
 
     streamPage.notEqToText(Streams.songTitle, "Radio Zum 1");
   });
 
   it("should play prev stream", () => {
     appPage.waitUntil(7000);
-    appPage.clickOnButton(Streams.prev);
+    appPage.click(Streams.prev);
 
-    expect(appPage.shouldBeVisible(Streams.stop));
+    expect(appPage.should(Streams.stop, Chainers.beVisible));
 
     streamPage.notEqToText(Streams.songTitle, "Radio Zum 1");
   });
 
   it("should play next stream", () => {
     appPage.waitUntil(7000);
-    appPage.clickOnButton(Streams.next);
+    appPage.click(Streams.next);
 
-    expect(appPage.shouldBeVisible(Streams.stop));
+    expect(appPage.should(Streams.stop, Chainers.beVisible));
 
     streamPage.notEqToText(Streams.songTitle, "Radio Zum 1");
   });
 
   it("should click on Radio Zum 2", () => {
-    appPage.clickOnButtonByIndex(Streams.radioStream, 1);
+    appPage.clickByIndex(Streams.radioStream, 1);
     appPage.waitUntil(7000);
 
-    expect(appPage.shouldBeVisible(Streams.stop));
+    expect(appPage.should(Streams.stop, Chainers.beVisible));
   });
 
   it("should click on Radio Zum 3", () => {
-    appPage.clickOnButtonByIndex(Streams.radioStream, 2);
+    appPage.clickByIndex(Streams.radioStream, 2);
     appPage.waitUntil(7000);
 
-    expect(appPage.shouldBeVisible(Streams.stop));
+    expect(appPage.should(Streams.stop, Chainers.beVisible));
   });
 
   it("should click on Radio Zum 1", () => {
-    appPage.clickOnButtonByIndex(Streams.radioStream, 0);
+    appPage.clickByIndex(Streams.radioStream, 0);
     appPage.waitUntil(7000);
 
-    expect(appPage.shouldBeVisible(Streams.stop));
+    expect(appPage.should(Streams.stop, Chainers.beVisible));
   });
 
   it("Click instagram and facebook icon", () => {
-    appPage.clickOnButton(Streams.clickOnRadioZum1InstagramIcon);
-    appPage.clickOnButton(Streams.clickOnRadioZum1FacebookIcon);
-    appPage.clickOnButton(Streams.clickOnRadioZum2InstagramIcon);
-    appPage.clickOnButton(Streams.clickOnRadioZum2FacebookIcon);
-    appPage.clickOnButton(Streams.clickOnRadioZum3InstagramIcon);
-    appPage.clickOnButton(Streams.clickOnRadioZum3FacebookIcon);
+    appPage.click(Streams.ig.rz1);
+    appPage.click(Streams.fb.rz1);
+    appPage.click(Streams.ig.rz2);
+    appPage.click(Streams.fb.rz2);
+    appPage.click(Streams.ig.rz3);
+    appPage.click(Streams.fb.rz3);
   });
 });

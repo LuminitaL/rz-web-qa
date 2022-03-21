@@ -1,5 +1,6 @@
 import { AppPage } from "../page-objects";
 import { App } from "../locators";
+import { Chainers } from "../chainers";
 
 describe("App: Loadpage", () => {
   let appPage = null;
@@ -10,6 +11,6 @@ describe("App: Loadpage", () => {
   });
 
   it("should be visible main page", () => {
-    expect(appPage.shouldBeVisible(App.content));
+    expect(appPage.should(App.content, Chainers.beVisible));
   });
 });

@@ -3,15 +3,15 @@ export class AppPage {
     cy.visit("https://www.radiozum.md/");
   }
 
-  shouldBeVisible(locator) {
-    cy.get(locator).should("be.visible");
+  should(locator, chainers, value = null) {
+    cy.get(locator).should(chainers, value);
   }
 
-  clickOnButton(locator) {
+  click(locator) {
     cy.get(locator).click();
   }
 
-  clickOnButtonByIndex(locator, index) {
+  clickByIndex(locator, index) {
     cy.get(locator).eq(index).click();
   }
 
